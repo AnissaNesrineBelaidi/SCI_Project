@@ -66,6 +66,13 @@ fun ControlScreen() {
         Button(onClick = { sendRequest(client, "http://192.168.4.1/gpio/27/off") }) {
             Text(text = "Turn GPIO 27 OFF")
         }
+        // Add buttons for servo control
+        Button(onClick = { sendRequest(client, "http://192.168.4.1/servo/up") }) {
+            Text(text = "Move Servo Up")
+        }
+        Button(onClick = { sendRequest(client, "http://192.168.4.1/servo/down") }) {
+            Text(text = "Move Servo Down")
+        }
     }
 }
 
@@ -78,4 +85,3 @@ fun sendRequest(client: OkHttpClient, url: String) {
         }
     }
 }
-
